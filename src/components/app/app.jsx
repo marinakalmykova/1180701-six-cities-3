@@ -1,11 +1,7 @@
 import React from "react";
 import Main from "../main/main.jsx";
 
-
-const App = () => {
-  return (
-    <Main />
-  );
-};
+// eslint-disable-next-line react/prop-types
+const App = ({placeNumber: placeNumber}) => <Main placeNumber = {placeNumber}/>;
 
 export default App;
