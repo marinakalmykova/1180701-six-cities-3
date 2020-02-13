@@ -1,7 +1,16 @@
 import React from "react";
+import PropTypes from "prop-types";
 import Main from "../main/main.jsx";
 
-// eslint-disable-next-line react/prop-types
-const App = ({placeNumber}) => <Main placeNumber = {placeNumber}/>;
+
+const App = ({places}) => <Main
+  places={places}
+/>;
+
+App.propTypes = {
+  places: PropTypes.arrayOf(
+      PropTypes.string
+  ).isRequired
+};
 
 export default App;

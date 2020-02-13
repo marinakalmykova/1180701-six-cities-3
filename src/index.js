@@ -2,13 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./components/app/app.jsx";
 
-const Settings = {
-  PLACE_NUMBER: 312,
-};
+const PLACES = [`Beautiful & luxurious apartment at great location`, `Wood and stone place`];
 
 ReactDOM.render(
     <App
-      placeNumber={Settings.PLACE_NUMBER}
+      places={PLACES}
     />,
     document.querySelector(`#root`)
 );
