@@ -2,13 +2,15 @@ import React from "react";
 import PropTypes from "prop-types";
 import Card from "../card/card.jsx";
 
-const Main = ({places}) => {
+const Main = ({places, onHeaderClick}) => {
   const placeCards = places.map((it, i) =>
     <Card key={i} place={it} />
   );
   return (
     <div className="page page--gray page--main">
-      <header className="header">
+      <header
+        onClick={onHeaderClick}
+        className="header">
         <div className="container">
           <div className="header__wrapper">
             <div className="header__left">
@@ -106,7 +108,8 @@ const Main = ({places}) => {
 Main.propTypes = {
   places: PropTypes.arrayOf(
       PropTypes.string
-  ).isRequired
+  ).isRequired,
+  onHeaderClick: PropTypes.func.isRequired,
 };
 
 export default Main;
