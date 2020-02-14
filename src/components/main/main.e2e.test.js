@@ -5,11 +5,11 @@ import Main from "./main";
 
 const PLACES = [
   {
-    id: String(new Date() + Math.random()),
+    id: 1,
     name: `Beautiful & luxurious apartment at great location`,
   },
   {
-    id: String(new Date() + Math.random()),
+    id: 2,
     name: `Wood and stone place`
   }];
 
