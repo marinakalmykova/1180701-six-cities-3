@@ -3,6 +3,16 @@ import Enzyme, {shallow} from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 import Main from "./main";
 
+const PLACES = [
+  {
+    id: String(new Date() + Math.random()),
+    name: `Beautiful & luxurious apartment at great location`,
+  },
+  {
+    id: String(new Date() + Math.random()),
+    name: `Wood and stone place`
+  }];
+
 Enzyme.configure({
   adapter: new Adapter(),
 });
@@ -12,7 +22,7 @@ it(`Should header be pressed`, () => {
 
   const main = shallow(
       <Main
-        places={[`Beautiful & luxurious apartment at great location`, `Wood and stone place`]}
+        places={PLACES}
         onHeaderClick={onHeaderClick}
       />
   );

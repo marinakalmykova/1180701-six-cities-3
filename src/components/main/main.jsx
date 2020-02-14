@@ -3,9 +3,6 @@ import PropTypes from "prop-types";
 import Card from "../card/card.jsx";
 
 const Main = ({places, onHeaderClick}) => {
-  const placeCards = places.map((it, i) =>
-    <Card key={i} place={it} />
-  );
   return (
     <div className="page page--gray page--main">
       <header
@@ -92,7 +89,7 @@ const Main = ({places, onHeaderClick}) => {
                 </ul>
               </form>
               <div className="cities__places-list places__list tabs__content">
-                {placeCards}
+                {places.map((place) => <Card key={place.id} place={place.name} />)}
               </div>
             </section>
             <div className="cities__right-section">
@@ -107,7 +104,7 @@ const Main = ({places, onHeaderClick}) => {
 
 Main.propTypes = {
   places: PropTypes.arrayOf(
-      PropTypes.string
+      PropTypes.object
   ).isRequired,
   onHeaderClick: PropTypes.func.isRequired,
 };
