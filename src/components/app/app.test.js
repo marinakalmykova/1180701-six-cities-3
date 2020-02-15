@@ -1,6 +1,6 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import App from "./components/app/app.jsx";
+import renderer from "react-test-renderer";
+import App from "./app.jsx";
 
 const PLACES = [
   {
@@ -12,9 +12,12 @@ const PLACES = [
     name: `Wood and stone place`
   }];
 
-ReactDOM.render(
-    <App
+it(`Render App`, () => {
+  const tree = renderer
+    .create(<App
       places={PLACES}
-    />,
-    document.querySelector(`#root`)
-);
+    />)
+    .toJSON();
+
+  expect(tree).toMatchSnapshot();
+});
