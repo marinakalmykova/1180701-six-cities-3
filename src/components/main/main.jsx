@@ -104,8 +104,10 @@ const Main = ({places, onHeaderClick}) => {
 
 Main.propTypes = {
   places: PropTypes.arrayOf(
-      PropTypes.object
-  ).isRequired,
+      PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        name: PropTypes.string.isRequired,
+      })).isRequired,
   onHeaderClick: PropTypes.func.isRequired,
 };
 

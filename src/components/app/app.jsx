@@ -15,8 +15,10 @@ const App = ({places}) => {
 
 App.propTypes = {
   places: PropTypes.arrayOf(
-      PropTypes.object
-  ).isRequired
+      PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        name: PropTypes.string.isRequired,
+      })).isRequired
 };
 
 export default App;
