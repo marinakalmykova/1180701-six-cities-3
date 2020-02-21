@@ -1,8 +1,4 @@
-import React from "react";
-import renderer from "react-test-renderer";
-import App from "./app.jsx";
-
-const OFFERS = [
+export default [
   {
     id: 1,
     name: `Beautiful & luxurious apartment at great location`,
@@ -42,14 +38,5 @@ const OFFERS = [
     isBookmark: false,
     isPremium: true,
     image: `img/apartment-03.jpg`,
-  }];
-
-it(`Render App`, () => {
-  const tree = renderer
-    .create(<App
-      offers={OFFERS}
-    />)
-    .toJSON();
-
-  expect(tree).toMatchSnapshot();
-});
+  }
+];

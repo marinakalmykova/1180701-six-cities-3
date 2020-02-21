@@ -1,6 +1,6 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import App from "./app.jsx";
+import CardsList from "./cards-list.jsx";
 
 const OFFERS = [
   {
@@ -44,10 +44,13 @@ const OFFERS = [
     image: `img/apartment-03.jpg`,
   }];
 
-it(`Render App`, () => {
+it(`Render Cards List`, () => {
+  const onHeaderClick = jest.fn();
+
   const tree = renderer
-    .create(<App
+    .create(<CardsList
       offers={OFFERS}
+      onHeaderClick={onHeaderClick}
     />)
     .toJSON();
 
