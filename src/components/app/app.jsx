@@ -1,26 +1,16 @@
-import React, {PureComponent} from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import Main from "../main/main.jsx";
 
-class App extends PureComponent {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    const {offers} = this.props;
-
-    return (
-      <Main
-        offers={offers}
-        onHeaderClick={this._headerClickHandler}
-      />
-    );
-  }
-  _headerClickHandler() {
-    return;
-  }
-}
+const App = ({offers}) => {
+  const handleHeaderClick = () => {};
+  return (
+    <Main
+      offers={offers}
+      onHeaderClick={handleHeaderClick}
+    />
+  );
+};
 
 App.propTypes = {
   offers: PropTypes.arrayOf(

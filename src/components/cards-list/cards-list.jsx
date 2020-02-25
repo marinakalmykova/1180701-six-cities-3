@@ -23,16 +23,15 @@ class CardsList extends PureComponent {
 
   render() {
     const {offers, onHeaderClick} = this.props;
-    const cardsList = offers.map((offer) =>
-      <Card
-        key={offer.id}
-        offer={offer}
-        onHeaderClick={onHeaderClick}
-        onCardHover={this._setActiveCard}
-      />
-    );
     return (
-      <React.Fragment>{cardsList}</React.Fragment>
+      <React.Fragment>{offers.map((offer) =>
+        <Card
+          key={offer.id}
+          offer={offer}
+          onHeaderClick={onHeaderClick}
+          onCardHover={this._setActiveCard}
+        />
+      )}</React.Fragment>
     );
   }
 }
