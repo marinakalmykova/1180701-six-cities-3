@@ -8,14 +8,14 @@ Enzyme.configure({
 });
 
 const OFFER = {
-  id: 1,
-  name: `Beautiful & luxurious apartment at great location`,
+  id: 10,
+  name: `Test apartment`,
   price: 120,
   type: `Apartment`,
   rating: `80%`,
   isBookmark: false,
   isPremium: true,
-  image: `img/apartment-01.jpg`,
+  image: `img/test-apartment.jpg`,
 };
 
 it(`Handler got card's id on hover`, function () {
