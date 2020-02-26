@@ -2,15 +2,14 @@ import React from "react";
 import PropTypes from 'prop-types';
 
 const Card = ({offer, onHeaderClick, onCardHover}) => {
-  const {id, name, price, type, rating, image, isPremium, isBookmark} = offer;
+  const {name, price, type, rating, image, isPremium, isBookmark} = offer;
 
   return (
     <article
       className="cities__place-card place-card"
-      key={id}
       onMouseEnter={onCardHover}
     >
-      {isPremium ? <div className="place-card__mark"><span>Premium</span></div> : ``}
+      {isPremium && <div className="place-card__mark"><span>Premium</span></div>}
       <div className="cities__image-wrapper place-card__image-wrapper">
         <a href="#">
           <img className="place-card__image" src={image} width="260" height="200" alt="Place image"/>
@@ -54,7 +53,7 @@ const Card = ({offer, onHeaderClick, onCardHover}) => {
 };
 
 Card.propTypes = {
-  offer: PropTypes.objectOf({
+  offer: PropTypes.shape({
     id: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
@@ -62,7 +61,7 @@ Card.propTypes = {
     rating: PropTypes.string.isRequired,
     isBookmark: PropTypes.bool,
     isPremium: PropTypes.bool,
-    image: PropTypes.oneOf([`img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/room.jpg`]),
+    image: PropTypes.string,
   }).isRequired,
   onCardHover: PropTypes.func,
   onHeaderClick: PropTypes.func

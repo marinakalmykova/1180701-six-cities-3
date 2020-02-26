@@ -22,7 +22,7 @@ App.propTypes = {
         rating: PropTypes.string.isRequired,
         isBookmark: PropTypes.bool,
         isPremium: PropTypes.bool,
-        image: PropTypes.oneOf([`img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/room.jpg`]),
+        image: PropTypes.string,
       })).isRequired
 };
 
