@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import CardsList from "../cards-list/cards-list.jsx";
+import Map from "../map/map.jsx";
 
 const Main = ({offers, onHeaderClick}) => {
   return (
@@ -94,7 +95,11 @@ const Main = ({offers, onHeaderClick}) => {
               </div>
             </section>
             <div className="cities__right-section">
-              <section className="cities__map map"></section>
+              <section className="cities__map map">
+                <Map
+                  offers = {offers}
+                />
+              </section>
             </div>
           </div>
         </div>
@@ -114,6 +119,7 @@ Main.propTypes = {
         isBookmark: PropTypes.bool,
         isPremium: PropTypes.bool,
         image: PropTypes.string,
+        coords: PropTypes.arrayOf(PropTypes.number.isRequired).isRequired,
       })).isRequired,
   onHeaderClick: PropTypes.func.isRequired,
 };

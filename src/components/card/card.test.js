@@ -11,6 +11,7 @@ const OFFER = {
   isBookmark: false,
   isPremium: true,
   image: `img/test-apartment.jpg`,
+  coords: [52.369553944609, 4.85309666407542],
 };
 
 it(`Should Card render correctly`, () => {

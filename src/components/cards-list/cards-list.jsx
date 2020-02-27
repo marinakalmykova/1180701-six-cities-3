@@ -48,6 +48,7 @@ CardsList.propTypes = {
         isBookmark: PropTypes.bool,
         isPremium: PropTypes.bool,
         image: PropTypes.string,
+        coords: PropTypes.arrayOf(PropTypes.number.isRequired).isRequired,
       })).isRequired
 };
 

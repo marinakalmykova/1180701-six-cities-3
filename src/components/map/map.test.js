@@ -1,6 +1,7 @@
-import React from "react";
-import renderer from "react-test-renderer";
-import CardsList from "./cards-list.jsx";
+import React from 'react';
+import renderer from 'react-test-renderer';
+import Map from './map.jsx';
+jest.mock(`./map.jsx`);
 
 const OFFERS = [
   {
@@ -27,14 +28,11 @@ const OFFERS = [
   },
 ];
 
-it(`Render Cards List`, () => {
-  const onHeaderClick = jest.fn();
-
-  const tree = renderer
-    .create(<CardsList
-      offers={OFFERS}
-      onHeaderClick={onHeaderClick}
-    />)
+it(`Should Map render correctly`, () => {
+  const tree = renderer.create(
+      <Map
+        offers = {OFFERS}
+      />)
     .toJSON();
 
   expect(tree).toMatchSnapshot();

@@ -1,6 +1,7 @@
 import React from "react";
 import renderer from "react-test-renderer";
 import Main from "./main.jsx";
+jest.mock(`../map/map.jsx`);
 
 const OFFERS = [
   {
@@ -12,6 +13,7 @@ const OFFERS = [
     isBookmark: false,
     isPremium: true,
     image: `img/test-apartment.jpg`,
+    coords: [52.369553944609, 4.85309666407542],
   },
   {
     id: 20,
@@ -22,6 +24,7 @@ const OFFERS = [
     isBookmark: true,
     isPremium: false,
     image: ``,
+    coords: [52.369553946782, 4.85309666407867],
   },
 ];
 

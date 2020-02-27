@@ -8,6 +8,7 @@ export default [
     isBookmark: false,
     isPremium: true,
     image: `img/apartment-01.jpg`,
+    coords: [52.3909553943508, 4.85309666406198],
   },
   {
     id: 2,
@@ -18,6 +19,7 @@ export default [
     isBookmark: true,
     isPremium: false,
     image: `img/room.jpg`,
+    coords: [52.369553943508, 4.85309666406198],
   },
   {
     id: 3,
@@ -28,6 +30,7 @@ export default [
     isBookmark: true,
     isPremium: false,
     image: `img/apartment-02.jpg`,
+    coords: [52.3909553943508, 4.929309666406198],
   },
   {
     id: 4,
@@ -38,5 +41,6 @@ export default [
     isBookmark: false,
     isPremium: true,
     image: `img/apartment-03.jpg`,
+    coords: [52.3809553943508, 4.939309666406198],
   }
 ];
