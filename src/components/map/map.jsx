@@ -31,8 +31,7 @@ class Map extends PureComponent {
       })
       .addTo(map);
 
-    offers.map((item) => {
-      const {coords} = item;
+    offers.map(({coords}) => {
       leaflet
         .marker(coords, {icon})
         .addTo(map);
